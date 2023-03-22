@@ -79,9 +79,14 @@ svg {
 
 #current-temperature {
   color: #4DA52F;
+  transition: 1000ms;
 }
 
 .limit {
   color: #FFFFFF;
   font-size: 9px;
+}
+
+.thermometer {
+  transition: 1000ms;
 }
