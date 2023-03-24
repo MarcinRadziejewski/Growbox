@@ -1,16 +1,26 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import './TemperatureModal.jsx'
+import { useState, useEffect } from 'react';
+import './App.css';
 import TemperatureModal from './TemperatureModal.jsx';
+import Sidebar from './Sidebar.jsx';
+import { createBrowserRouter, createRoutesFromElements, Route, Routes } from "react-router-dom";
+import Home from './Home.jsx';
+import MyGrowboxes from './MyGrowboxes.jsx';
 
 function App() {
   
+
   const [openModal, setOpenModal] = useState(false);
+  const [openSidebar, setOpenSidebar] = useState(false);
   const [minMaxTemperatures, setMinMaxTemperatures] = useState({
     maxTemperature: 42,
     currentTemperature: 35,
     minTemperature: 29,
   });
+
+  /*function simulateTemperature (currentTemperature) {
+    currentTemperature = currentTemperature + Math.random()*0.1 + Math.random()*(-0.1);
+  }*/
+
 
   useEffect(() => {
     const p = document.querySelector("#current-temperature");
@@ -27,7 +37,7 @@ function App() {
   return (
   <div className='app'>
     <div className='header'>
-    <div className='hamburger-menu'></div>
+    <div className='hamburger-menu' onClick={() => setOpenSidebar(true)}></div>
     <div className='current-crop'>Tomatoes</div>
     <div className='turn-off-button' onClick={() => setMinMaxTemperatures({
       maxTemperature: minMaxTemperatures.maxTemperature,
@@ -85,9 +95,16 @@ function App() {
     temperatureLimits={minMaxTemperatures}
     setTemperatureLimits={setMinMaxTemperatures}/>
 
+    <Sidebar
+    openSidebar={openSidebar}
+    setOpenSidebar={setOpenSidebar}/>
+
+    
   </div>
   )
   
 }
 
-export default App
+
+
+export default App;
