@@ -5,10 +5,11 @@
   text-align: center;
 }
 
-.app {
+main {
   width: 390px;
   height: 800px;  
-  background-color: #242623;
+  background-color: #dadada;
+  /* #242623 */
 }
 
 .header {

@@ -1,14 +1,19 @@
-import React from "react";
-import Sidebar from './Sidebar.jsx';
+import { useState } from 'react';
+import './App.css'
+import { Blant } from './Blant'
 
-function Home(){
-return (
-<div className="my-growboxes">
-  <div className='header'>
-    <div className='hamburger-menu' onClick={() => setOpenSidebar(true)}></div>
-  </div>
-</div>
-);
+export function Home() {
+  const [openSidebar, setOpenSidebar] = useState(false);
+
+  return (
+  <main className="home">
+    <div className='header'>
+      <div className='hamburger-menu' onClick={() => setOpenSidebar(true)}></div>
+    </div>
+
+    <Blant
+    openSidebar={openSidebar}
+    setOpenSidebar={setOpenSidebar} />
+  </main>
+  )
 }
-
-export default Home;

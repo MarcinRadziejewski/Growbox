@@ -1,6 +1,6 @@
 import './TemperatureModal.css'
 
-function TemperatureModal({openModal, setOpenModal, temperatureLimits, setTemperatureLimits}) {
+export function TemperatureModal({openModal, setOpenModal, temperatureLimits, setTemperatureLimits}) {
   if(!openModal)
     return null
 
@@ -38,5 +38,3 @@ function TemperatureModal({openModal, setOpenModal, temperatureLimits, setTemper
 }
 
 //sk-09kh6418c5c4e0b01267
-
-export default TemperatureModal;
